@@ -2,37 +2,37 @@ import json
 import sys
 
 BASE_TIRE_OFFSET = {
-    "SOFT": -1.25,
+    "SOFT": -1.5,
     "MEDIUM": 0.0,
-    "HARD": 0.95,
+    "HARD": 0.9,
 }
 
 LINEAR_WEAR = {
     "SOFT": 0.11,
-    "MEDIUM": 0.075,
-    "HARD": 0.04,
+    "MEDIUM": 0.07,
+    "HARD": 0.035,
 }
 
 QUADRATIC_WEAR = {
     "SOFT": 0.0035,
-    "MEDIUM": 0.0018,
-    "HARD": 0.0008,
+    "MEDIUM": 0.0015,
+    "HARD": 0.0007,
 }
 
 FINAL_TIRE_BONUS = {
     "SOFT": -0.8,
-    "MEDIUM": -0.5,
+    "MEDIUM": -0.4,
     "HARD": 0.0,
 }
 
 
 def temp_adjustment(tire, track_temp):
     if tire == "SOFT":
-        return max(0.0, track_temp - 30) * 0.030
+        return max(0.0, track_temp - 30) * 0.025
     if tire == "MEDIUM":
-        return max(0.0, track_temp - 32) * 0.015
+        return max(0.0, track_temp - 32) * 0.012
     if tire == "HARD":
-        return max(0.0, 26 - track_temp) * 0.012
+        return max(0.0, 26 - track_temp) * 0.010
     return 0.0
 
 
