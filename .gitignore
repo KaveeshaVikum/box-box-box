@@ -36,3 +36,11 @@ temp/
 # System files
 Thumbs.db
 desktop.ini
+
+pred_*.json
+*_pretty.json
+my_output.json
+out.json
+output.json
+test001_pretty.json
+test1_pretty.json
